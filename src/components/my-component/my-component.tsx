@@ -11,13 +11,15 @@ export class MyComponent {
   @Prop() first: string;
   @Prop() last: string;
 
-  render() {
-
+  componentDidLoad() {
+    console.log('Component has been rendered');
     // @ts-ignore
-    axios.get('https://jsonplaceholder.typicode.com/todos/1', response => {
-      console.log('response:', response)
+    axios.get('https://jsonplaceholder.typicode.com/todos/1').then(response => {
+      console.log('response', response)
     })
+  }
 
+  render() {
     return (
       <div>
         Hello, World! I'm {this.first} {this.last}
