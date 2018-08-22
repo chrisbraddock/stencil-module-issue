@@ -1,4 +1,5 @@
 import { Config } from '@stencil/core';
+import dotenvPlugin from 'rollup-plugin-dotenv';
 
 export const config: Config = {
   namespace: 'mycomponent',
@@ -10,5 +11,8 @@ export const config: Config = {
       type: 'www',
       serviceWorker: null
     }
+  ],
+  plugins: [
+    dotenvPlugin()
   ]
 };
