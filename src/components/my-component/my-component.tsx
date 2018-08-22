@@ -1,5 +1,15 @@
 import { Component, Prop } from '@stencil/core';
 
+import debug from 'debug'
+
+// debugging set in localStorage, do this in console:
+// localStorage.debug = 'worker/:*'
+const a = debug('worker:a');
+const b = debug('worker:b');
+
+a('debug message from a');
+b('debug message from b');
+
 @Component({
   tag: 'my-component',
   styleUrl: 'my-component.css',
