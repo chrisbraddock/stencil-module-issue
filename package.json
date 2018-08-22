@@ -12,10 +12,13 @@
   "scripts": {
     "build": "stencil build",
     "start": "stencil build --dev --watch --serve",
+    "start2": "node --require 'dotenv/config' stencil build --dev --watch --serve",
     "test": "jest",
     "test.watch": "jest --watch"
   },
-  "dependencies": {},
+  "dependencies": {
+    "dotenv": "^6.0.0"
+  },
   "devDependencies": {
     "@stencil/core": "^0.11.0",
     "@types/jest": "^23.3.1",
