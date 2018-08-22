@@ -10,5 +10,8 @@ export const config: Config = {
       type: 'www',
       serviceWorker: null
     }
-  ]
+  ],
+  nodeResolve: {
+    browser: true
+  }
 };
