@@ -1,4 +1,16 @@
 import { Component, Prop } from '@stencil/core';
+import winston from 'winston'
+
+// @ts-ignore
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.json(),
+  transports: [
+    {
+      format: winston.format.simple()
+    }
+  ]
+});
 
 @Component({
   tag: 'my-component',
@@ -11,6 +23,12 @@ export class MyComponent {
   @Prop() last: string;
 
   render() {
+
+    logger.log({
+      level: 'info',
+      message: 'Hello distributed log files!'
+    });
+
     return (
       <div>
         Hello, World! I'm {this.first} {this.last}

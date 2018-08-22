@@ -11,4 +11,8 @@ export const config: Config = {
       serviceWorker: null
     }
   ]
+  // no difference
+  // nodeResolve: {
+  //   browser: true
+  // }
 };
